@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21st Nov · Our Memory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated night sky & streetlight bokeh canvas -->
+  <canvas id="night-canvas" aria-hidden="true"></canvas>
+
+  <!-- Subtle top navigation -->
+  <header class="site-header">
+    <a href="#top" class="brand">
+      <span class="brand-dot"></span>
+      <span>21 · 11 · 2026</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#story">Our Story</a>
+      <a href="#gallery">Memories</a>
+      <a href="#night-ride">The Night Ride</a>
+      <a href="#notes">Memory Jar</a>
+    </nav>
+    <button id="ambient-toggle" class="btn-ghost btn-sm" type="button" aria-pressed="false" title="Toggle soft night ambience">
+      <span class="pulse-icon"></span>
+      <span id="ambient-label">Night Vibe: Off</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content reveal">
+        <div class="eyebrow">
+          <span class="mono">21 NOV 2026 · 10:01 AM</span>
+          <span class="sep">·</span>
+          <span>COMMITTED &amp; THE NIGHT RIDE</span>
+        </div>
+
+        <h1>
+          Friends for so long,<br />
+          <em>then suddenly, everything.</em>
+        </h1>
+
+        <p class="hero-sub">
+          We didn’t take years to fall—once we got close, it happened all at once.
+          This little corner of the night is for every photo we took, the day we chose each other,
+          and the late-night ride that started it all.
+        </p>
+
+        <!-- Live counter since Nov 21, 2026 10:01 AM -->
+        <div class="counter-card" aria-label="Time since November 21st">
+          <div class="counter-title">Together since 21st Nov · 10:01 AM</div>
+          <div class="counter-grid" id="together-counter">
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-days">00</span>
+              <span class="counter-lbl">Days</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-hours">00</span>
+              <span class="counter-lbl">Hours</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-mins">00</span>
+              <span class="counter-lbl">Minutes</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-secs">00</span>
+              <span class="counter-lbl">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#gallery" class="btn-primary">Open Our Photos</a>
+          <button id="start-slideshow-btn" class="btn-secondary" type="button">
+            Play Memory Slideshow
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-featured reveal">
+        <div class="polaroid-frame">
+          <div class="polaroid-glow"></div>
+          <img
+            src="assets/photos/IMG_9160.jpg"
+            alt="Us on the night of November 21st"
+            loading="eager"
+          />
+          <div class="polaroid-caption">
+            <span class="mono">21 NOV · 23:06</span>
+            <p>The night we got committed &amp; went for a ride.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY TIMELINE -->
+    <section id="story" class="section container">
+      <div class="section-head reveal">
+        <span class="section-kicker mono">CHAPTER I · THE TIMELINE</span>
+        <h2>How we got here</h2>
+        <p>From familiar faces to our favorite chapter.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-marker">01</div>
+          <div class="timeline-body">
+            <span class="mono timeline-date">THE BEGINNING</span>
+            <h3>Long-time friends</h3>
+            <p>
+              We already knew how to laugh together without trying. Comfort came first—no
+              pretending, just two friends who always felt easy around each other.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-marker">02</div>
+          <div class="timeline-body">
+            <span class="mono timeline-date">JUN – SEP 2026</span>
+            <h3>Getting close, so fast</h3>
+            <p>
+              Somewhere between late-night talks and random plans, everything accelerated.
+              One moment we were just hanging out, and the next, every day felt incomplete
+              without each other.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item highlight-item reveal">
+          <div class="timeline-marker">03</div>
+          <div class="timeline-body">
+            <span class="mono timeline-date">21 NOV 2026 · 10:01 AM</span>
+            <h3>The day I said yes</h3>
+            <p>
+              No more wondering, no more holding back. On the 21st of November at 10:01 AM,
+              in this very conversation, I said yes to you—and from that moment on, we were together.
+            </p>
+            <button id="timeline-yes-preview" class="timeline-chat-preview" type="button" title="Click to view full chat">
+              <img src="assets/photos/IMG_9248.jpg" alt="21st November 10:01 AM chat where I said yes" loading="lazy" />
+              <span class="mono">21 NOV · 10:01 AM · THE CHAT WHERE WE BEGAN</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-marker">04</div>
+          <div class="timeline-body">
+            <span class="mono timeline-date">21 NOV · 23:06</span>
+            <h3>The night ride</h3>
+            <p>
+              Cool night air, warm streetlights blurring past, quiet roads, and that
+              unforgettable feeling of riding into the night together right after saying yes.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery" class="section container">
+      <div class="section-head reveal">
+        <span class="section-kicker mono">CHAPTER II · 12 MOMENTS</span>
+        <h2>Our Photos Together</h2>
+        <p>
+          Sorted in time from June to November 21st. Click any photo to view it full-screen,
+          or hover to edit its memory caption.
+        </p>
+      </div>
+
+      <div class="filter-bar reveal" role="tablist" aria-label="Filter memories by season">
+        <button class="filter-btn active" data-filter="all" type="button">All Memories (12)</button>
+        <button class="filter-btn" data-filter="summer" type="button">Summer Days · Jun–Aug</button>
+        <button class="filter-btn" data-filter="autumn" type="button">Autumn · Sep</button>
+        <button class="filter-btn" data-filter="nov21" type="button">21st Nov · The Night</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Populated by script.js -->
+      </div>
+    </section>
+
+    <!-- THE NIGHT RIDE FEATURE -->
+    <section id="night-ride" class="section container">
+      <div class="ride-card reveal">
+        <div class="ride-visual" aria-hidden="true">
+          <div class="road-horizon">
+            <div class="moon"></div>
+            <div class="streetlights">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="road-lines"></div>
+          </div>
+        </div>
+
+        <div class="ride-content">
+          <span class="section-kicker mono">CHAPTER III · AFTER DARK</span>
+          <h2>21st November, 11:06 PM</h2>
+          <p>
+            Some nights stay in your chest forever. Streetlights passing overhead,
+            the hum of the road, and knowing that the person next to you isn’t just
+            your longtime friend anymore—they’re yours.
+          </p>
+
+          <div class="ride-stats">
+            <div class="stat-pill">
+              <span class="mono stat-val">10:01 AM</span>
+              <span class="stat-lbl">21 Nov · Committed</span>
+            </div>
+            <div class="stat-pill">
+              <span class="mono stat-val">11:06 PM</span>
+              <span class="stat-lbl">21 Nov · Night Ride</span>
+            </div>
+            <div class="stat-pill">
+              <span class="mono stat-val">∞</span>
+              <span class="stat-lbl">More Rides Ahead</span>
+            </div>
+          </div>
+
+          <button id="sparkle-btn" class="btn-primary" type="button">
+            Send a Night-Ride Sparkle ✨
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORY JAR / NOTES -->
+    <section id="notes" class="section container">
+      <div class="section-head reveal">
+        <span class="section-kicker mono">CHAPTER IV · MEMORY JAR</span>
+        <h2>Little Notes &amp; Inside Jokes</h2>
+        <p>Add a memory, a promise, or something from that night. Saved right in your browser.</p>
+      </div>
+
+      <div class="notes-layout reveal">
+        <form id="note-form" class="note-form">
+          <label for="note-title" class="sr-only">Memory title</label>
+          <input
+            id="note-title"
+            type="text"
+            placeholder="Title (e.g., That turn on the night ride...)"
+            maxlength="80"
+            required
+          />
+          <label for="note-body" class="sr-only">Memory text</label>
+          <textarea
+            id="note-body"
+            rows="3"
+            placeholder="Write a moment you never want to forget..."
+            maxlength="400"
+            required
+          ></textarea>
+          <button type="submit" class="btn-primary">Drop into Memory Jar</button>
+        </form>
+
+        <div class="notes-grid" id="notes-grid">
+          <!-- Populated by script.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="mono">21 · 11 · 2026</p>
+    <p>From long-time friends to our favorite story. Made with love for our memories.</p>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo viewer">
+    <button id="lb-close" class="lb-icon lb-close" type="button" aria-label="Close viewer">&times;</button>
+    <button id="lb-prev" class="lb-icon lb-prev" type="button" aria-label="Previous photo">&#8592;</button>
+    <button id="lb-next" class="lb-icon lb-next" type="button" aria-label="Next photo">&#8594;</button>
+
+    <div class="lb-stage">
+      <img id="lb-img" src="" alt="" />
+      <div class="lb-meta">
+        <div>
+          <span id="lb-date" class="mono lb-date"></span>
+          <p id="lb-caption" class="lb-caption"></p>
+        </div>
+        <div class="lb-controls">
+          <span id="lb-counter" class="mono">1 / 11</span>
+          <button id="lb-play" class="btn-ghost btn-sm" type="button">Autoplay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
